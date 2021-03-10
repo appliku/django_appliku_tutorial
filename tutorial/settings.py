@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 import environ
@@ -184,6 +185,7 @@ else:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
     WHITENOISE_USE_FINDERS = True
     STATIC_HOST = env('DJANGO_STATIC_HOST', default='')
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATIC_URL = STATIC_HOST + '/static/'
     if DEBUG:
         WHITENOISE_AUTOREFRESH = True
