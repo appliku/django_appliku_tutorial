@@ -17,7 +17,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     admin-compliant permissions.
     Username and password are required. Other fields are optional.
     """
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     email = CIEmailField(
         _('Email Address'),
         unique=True,
