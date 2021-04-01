@@ -58,7 +58,7 @@ THIRD_PARTY_APPS = [
 
 PROJECT_APPS = [
     'usermodel',
-    # 'pages',
+    'ses_sns',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
@@ -263,7 +263,7 @@ if SOCIALACCOUNT_PROVIDERS_GOOGLE_CLIENT_ID:
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Django Post Office Settings
-EMAIL_BACKEND = 'post_office.EmailBackend'
+EMAIL_BACKEND = 'ses_sns.backend.FilteringEmailBackend'
 
 POST_OFFICE = {
     'BACKENDS': {
